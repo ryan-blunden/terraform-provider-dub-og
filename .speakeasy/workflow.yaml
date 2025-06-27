@@ -1,0 +1,15 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Dub API:
+        inputs:
+            - location: openapi.yaml
+        overlays:
+            - location: .speakeasy/terraform-overlay.yaml
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/ryan-blunden-l5y/ryanblunden/dub-api
+targets:
+    dub:
+        target: terraform
+        source: Dub API

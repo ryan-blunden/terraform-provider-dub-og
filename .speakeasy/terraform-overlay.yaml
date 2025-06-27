@@ -1,0 +1,64 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Terraform Overlay
+  version: 0.0.0
+actions:
+  - target: $["paths"]["/links"]["post"]
+    update:
+      x-speakeasy-entity-operation: Link#create
+  - target: $["paths"]["/links"]["get"]
+    update:
+      x-speakesy-entity-operation: Links#read
+  - target: $["paths"]["/links/info"]["get"]
+    update:
+      x-speakeasy-entity-operation: Link#read
+  - target: $["paths"]["/links/info"]["get"]["parameters"][2]
+    update:
+      x-speakeasy-name-override: id
+  - target: $["paths"]["/links/{linkId}"]["patch"]
+    update:
+      x-speakeasy-entity-operation: Link#update
+  - target: $["paths"]["/links/{linkId}"]["patch"]["parameters"][0]
+    update:
+      x-speakeasy-name-override: id
+  - target: $["paths"]["/links/{linkId}"]["delete"]
+    update:
+      x-speakeasy-entity-operation: Link#delete
+  - target: $["paths"]["/links/{linkId}"]["delete"]["parameters"][0]
+    update:
+      x-speakeasy-name-override: id
+  - target: $["paths"]["/tags"]["post"]
+    update:
+      x-speakeasy-entity-operation: Tag#create
+  - target: $["paths"]["/tags"]["post"]["requestBody"]["content"]["application/json"]["schema"]
+    update:
+      required:
+        - name
+  - target: $["paths"]["/tags"]["get"]
+    update:
+      x-speakeasy-entity-operation: Tag#read
+  - target: $["paths"]["/tags/{id}"]["patch"]
+    update:
+      x-speakeasy-entity-operation: Tag#update
+  - target: $["paths"]["/tags/{id}"]["delete"]
+    update:
+      x-speakeasy-entity-operation: Tag#delete
+  - target: $["components"]["schemas"]["LinkSchema"]
+    update:
+      x-speakeasy-entity: Link
+  - target: $["components"]["schemas"]["LinkSchema"]["properties"]
+    update:
+      identifier:
+        x-speakeasy-terraform-ignore: true
+        type: string
+  - target: $["components"]["schemas"]
+    update:
+      LinksSchema:
+        type: array
+        x-speakeasy-entity: Links
+        items:
+          $ref: "#/components/schemas/LinkSchema"
+  - target: $["components"]["schemas"]["TagSchema"]
+    update:
+      x-speakeasy-entity: Tag

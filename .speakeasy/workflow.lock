@@ -1,0 +1,31 @@
+speakeasyVersion: 1.570.2
+sources:
+    Dub API:
+        sourceNamespace: dub-api
+        sourceRevisionDigest: sha256:878d5340e4e622f1831cf56c81ac9c88ad372441ed9f4fc7b01314d0221bcd51
+        sourceBlobDigest: sha256:52daff14086ec1616f016f03b6db4a065d69f11d53bfd4d2878810cf8c8d0d99
+        tags:
+            - latest
+            - 0.0.1
+targets:
+    dub:
+        source: Dub API
+        sourceNamespace: dub-api
+        sourceRevisionDigest: sha256:878d5340e4e622f1831cf56c81ac9c88ad372441ed9f4fc7b01314d0221bcd51
+        sourceBlobDigest: sha256:52daff14086ec1616f016f03b6db4a065d69f11d53bfd4d2878810cf8c8d0d99
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Dub API:
+            inputs:
+                - location: openapi.yaml
+            overlays:
+                - location: .speakeasy/terraform-overlay.yaml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/ryan-blunden-l5y/ryanblunden/dub-api
+    targets:
+        dub:
+            target: terraform
+            source: Dub API
