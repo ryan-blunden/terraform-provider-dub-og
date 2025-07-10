@@ -17,8 +17,6 @@ paths:
   /links:
     post:
       operationId: createLink
-      
-      
       summary: Create a link
       description: Create a link for the authenticated workspace.
       tags:
@@ -247,7 +245,6 @@ paths:
           $ref: '#/components/responses/500'
     get:
       operationId: getLinks
-      
       summary: Retrieve a list of links
       description: Retrieve a paginated list of links for the authenticated workspace.
       tags:
@@ -417,7 +414,6 @@ paths:
   /links/count:
     get:
       operationId: getLinksCount
-      
       summary: Retrieve links count
       description: Retrieve the number of links for the authenticated workspace.
       tags:
@@ -548,7 +544,6 @@ paths:
   /links/info:
     get:
       operationId: getLinkInfo
-      
       summary: Retrieve a link
       description: Retrieve the info for a link.
       tags:
@@ -611,8 +606,6 @@ paths:
   /links/{linkId}:
     patch:
       operationId: updateLink
-      
-      
       summary: Update a link
       description: Update a link for the authenticated workspace. If there's no change, returns it as it is.
       tags:
@@ -842,8 +835,6 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       operationId: deleteLink
-      
-      
       summary: Delete a link
       description: Delete a link for the authenticated workspace.
       tags:
@@ -892,7 +883,6 @@ paths:
   /links/bulk:
     post:
       operationId: bulkCreateLinks
-      
       summary: Bulk create links
       description: Bulk create up to 100 links for the authenticated workspace.
       tags:
@@ -1127,7 +1117,6 @@ paths:
           $ref: '#/components/responses/500'
     patch:
       operationId: bulkUpdateLinks
-      
       summary: Bulk update links
       description: Bulk update up to 100 links with the same data for the authenticated workspace.
       tags:
@@ -1352,7 +1341,6 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       operationId: bulkDeleteLinks
-      
       summary: Bulk delete links
       description: Bulk delete up to 100 links for the authenticated workspace.
       tags:
@@ -1408,8 +1396,6 @@ paths:
   /links/upsert:
     put:
       operationId: upsertLink
-      
-      
       summary: Upsert a link
       description: Upsert a link for the authenticated workspace by its URL. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
       tags:
@@ -1639,7 +1625,6 @@ paths:
   /analytics:
     get:
       operationId: retrieveAnalytics
-      
       summary: Retrieve analytics for a link, a domain, or the authenticated workspace.
       description: Retrieve analytics for a link, a domain, or the authenticated workspace. The response type depends on the `event` and `type` query parameters.
       tags:
@@ -2001,7 +1986,6 @@ paths:
   /events:
     get:
       operationId: listEvents
-      
       summary: Retrieve a list of events
       description: Retrieve a paginated list of events for the authenticated workspace.
       tags:
@@ -2331,7 +2315,6 @@ paths:
   /tags:
     post:
       operationId: createTag
-      
       summary: Create a tag
       description: Create a tag for the authenticated workspace.
       tags:
@@ -2392,7 +2375,6 @@ paths:
           $ref: '#/components/responses/500'
     get:
       operationId: getTags
-      
       summary: Retrieve a list of tags
       description: Retrieve a list of tags for the authenticated workspace.
       tags:
@@ -2487,8 +2469,6 @@ paths:
   /tags/{id}:
     patch:
       operationId: updateTag
-      
-      
       summary: Update a tag
       description: Update a tag in the workspace.
       tags:
@@ -2557,8 +2537,6 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       operationId: deleteTag
-      
-      
       summary: Delete a tag
       description: Delete a tag from the workspace. All existing links will still work, but they will no longer be associated with this tag.
       tags:
@@ -2607,7 +2585,6 @@ paths:
   /folders:
     post:
       operationId: createFolder
-      
       summary: Create a folder
       description: Create a folder for the authenticated workspace.
       tags:
@@ -2662,7 +2639,6 @@ paths:
           $ref: '#/components/responses/500'
     get:
       operationId: listFolders
-      
       summary: Retrieve a list of folders
       description: Retrieve a list of folders for the authenticated workspace.
       tags:
@@ -2727,8 +2703,6 @@ paths:
   /folders/{id}:
     patch:
       operationId: updateFolder
-      
-      
       summary: Update a folder
       description: Update a folder in the workspace.
       tags:
@@ -2789,8 +2763,6 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       operationId: deleteFolder
-      
-      
       summary: Delete a folder
       description: Delete a folder from the workspace. All existing links will still work, but they will no longer be associated with this folder.
       tags:
@@ -2839,7 +2811,6 @@ paths:
   /domains:
     post:
       operationId: createDomain
-      
       summary: Create a domain
       description: Create a domain for the authenticated workspace.
       tags:
@@ -2924,7 +2895,6 @@ paths:
           $ref: '#/components/responses/500'
     get:
       operationId: listDomains
-      
       summary: Retrieve a list of domains
       description: Retrieve a list of domains associated with the authenticated workspace.
       tags:
@@ -2996,8 +2966,6 @@ paths:
   /domains/{slug}:
     patch:
       operationId: updateDomain
-      
-      
       summary: Update a domain
       description: Update a domain for the authenticated workspace.
       tags:
@@ -3089,8 +3057,6 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       operationId: deleteDomain
-      
-      
       summary: Delete a domain
       description: Delete a domain from a workspace. It cannot be undone. This will also delete all the links associated with the domain.
       tags:
@@ -3141,7 +3107,6 @@ paths:
   /domains/register:
     post:
       operationId: registerDomain
-      
       summary: Register a domain
       description: Register a domain for the authenticated workspace. Only available for Enterprise Plans.
       tags:
@@ -3205,7 +3170,6 @@ paths:
   /domains/status:
     get:
       operationId: checkDomainStatus
-      
       summary: Check the availability of one or more domains
       description: Check if a domain name is available for purchase. You can check multiple domains at once.
       tags:
@@ -3276,7 +3240,6 @@ paths:
   /track/lead:
     post:
       operationId: trackLead
-      
       summary: Track a lead
       description: Track a lead for a short link.
       tags:
@@ -3401,7 +3364,6 @@ paths:
   /track/sale:
     post:
       operationId: trackSale
-      
       summary: Track a sale
       description: Track a sale for a short link.
       tags:
@@ -3544,7 +3506,6 @@ paths:
   /customers:
     get:
       operationId: getCustomers
-      
       summary: Retrieve a list of customers
       description: Retrieve a list of customers for the authenticated workspace.
       tags:
@@ -3792,7 +3753,6 @@ paths:
           $ref: '#/components/responses/500'
     post:
       operationId: createCustomer
-      
       summary: Create a customer
       description: '[Deprecated]: Customer creation can only be done via tracking a lead event. Use the /track/lead endpoint instead.'
       deprecated: true
@@ -3987,7 +3947,6 @@ paths:
   /customers/{id}:
     get:
       operationId: getCustomer
-      
       summary: Retrieve a customer
       description: Retrieve a customer by ID for the authenticated workspace.
       tags:
@@ -4169,8 +4128,6 @@ paths:
           $ref: '#/components/responses/500'
     patch:
       operationId: updateCustomer
-      
-      
       summary: Update a customer
       description: Update a customer for the authenticated workspace.
       tags:
@@ -4375,8 +4332,6 @@ paths:
           $ref: '#/components/responses/500'
     delete:
       operationId: deleteCustomer
-      
-      
       summary: Delete a customer
       description: Delete a customer from a workspace.
       tags:
@@ -4425,7 +4380,6 @@ paths:
   /partners:
     post:
       operationId: createPartner
-      
       summary: Create a partner
       description: Create a partner for a program. If partner exists, automatically enrolls them.
       tags:
@@ -5094,7 +5048,6 @@ paths:
   /partners/links:
     post:
       operationId: createPartnerLink
-      
       summary: Create a link for a partner
       description: Create a link for a partner that is enrolled in your program.
       tags:
@@ -5305,7 +5258,6 @@ paths:
           $ref: '#/components/responses/500'
     get:
       operationId: retrieveLinks
-      
       summary: Retrieve a partner's links.
       description: Retrieve a partner's links by their partner ID or tenant ID.
       tags:
@@ -5401,7 +5353,6 @@ paths:
   /partners/links/upsert:
     put:
       operationId: upsertPartnerLink
-      
       summary: Upsert a link for a partner
       description: Upsert a link for a partner that is enrolled in your program. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
       tags:
@@ -5613,7 +5564,6 @@ paths:
   /partners/analytics:
     get:
       operationId: retrievePartnerAnalytics
-      
       summary: Retrieve analytics for a partner
       description: Retrieve analytics for a partner within a program. The response type vary based on the `groupBy` query parameter.
       tags:
@@ -5715,7 +5665,6 @@ paths:
   /commissions:
     get:
       operationId: listCommissions
-      
       summary: Get commissions for a program.
       description: Retrieve a list of commissions for a program.
       tags:
@@ -5916,7 +5865,6 @@ paths:
   /commissions/{id}:
     patch:
       operationId: updateCommission
-      
       summary: Update a commission.
       description: Update an existing commission amount. This is useful for handling refunds (partial or full) or fraudulent sales.
       tags:
@@ -6031,7 +5979,6 @@ paths:
   /workspaces/{idOrSlug}:
     get:
       operationId: getWorkspace
-      
       summary: Retrieve a workspace
       description: Retrieve a workspace for the authenticated user.
       tags:
@@ -6073,8 +6020,6 @@ paths:
           $ref: '#/components/responses/500'
     patch:
       operationId: updateWorkspace
-      
-      
       summary: Update a workspace
       description: Update a workspace by ID or slug.
       tags:
@@ -6144,7 +6089,6 @@ paths:
   /tokens/embed/referrals:
     post:
       operationId: createReferralsEmbedToken
-      
       summary: Create a referrals embed token
       description: Create a referrals embed token for the given partner/tenant.
       tags:
@@ -6638,7 +6582,6 @@ paths:
   /qr:
     get:
       operationId: getQRCode
-      
       summary: Retrieve a QR code
       description: Retrieve a QR code for a link.
       tags:
@@ -6743,7 +6686,6 @@ components:
       type: http
       description: Default authentication mechanism
       scheme: bearer
-      
   schemas:
     LinkSchema:
       type: object
@@ -8120,7 +8062,6 @@ components:
         - $ref: '#/components/schemas/SaleCreatedEvent'
         - $ref: '#/components/schemas/PartnerEnrolledEvent'
       description: Webhook event schema
-      
     LinkErrorSchema:
       type: object
       properties:
@@ -18288,7 +18229,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18301,7 +18241,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: bad_request
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18319,7 +18258,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18332,7 +18270,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: unauthorized
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18350,7 +18287,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18363,7 +18299,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: forbidden
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18381,7 +18316,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18394,7 +18328,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: not_found
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18412,7 +18345,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18425,7 +18357,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: conflict
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18443,7 +18374,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18456,7 +18386,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: invite_expired
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18474,7 +18403,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18487,7 +18415,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: unprocessable_entity
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18505,7 +18432,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18518,7 +18444,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: rate_limit_exceeded
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
@@ -18536,7 +18461,6 @@ components:
       content:
         application/json:
           schema:
-            
             type: object
             properties:
               error:
@@ -18549,7 +18473,6 @@ components:
                     description: A short code indicating the error code returned.
                     example: internal_server_error
                   message:
-                    
                     type: string
                     description: A human readable explanation of what went wrong.
                     example: The requested resource was not found.
